@@ -19,10 +19,14 @@ module Orly
 
     def need_migrate?
       @diff.path('db/migrate').to_a.length > 0
+    rescue Git::GitExecuteError
+      false
     end
 
     def need_bundle_install?
       @diff.stats[:files].include? 'Gemfile.lock'
+    rescue Git::GitExecuteError
+      false
     end
   end
 end
