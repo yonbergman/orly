@@ -34,6 +34,16 @@ Choice.options do
     action { Orly::run() }
   end
 
+  option :speak do
+    short '-s'
+    long "--speak"
+    desc "makes the O RLY owl talk"
+    action do |value|
+      value = "YA RLY" if value == true
+      Orly::OwlPrinter.print(value.split("\n"))
+    end
+  end
+
 end
 
 Choice.help if Choice.choices.empty?
