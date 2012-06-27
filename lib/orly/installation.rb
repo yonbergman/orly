@@ -23,7 +23,7 @@ END
 
         File.open(HOOK_PATH, 'w') {|f| f.write(HOOK_CONTENT) }
         FileUtils.chmod 0755, HOOK_PATH
-        puts "installed Orly hook as:".green
+        puts "installed O RLY hook as:".green
         puts "  -> #{File.expand_path(HOOK_PATH)}".green
         puts "(to remove later, you can use: orly --uninstall)"
     end
@@ -33,7 +33,7 @@ END
         FileUtils.rm HOOK_PATH
         puts "uninstalled #{HOOK_PATH}".green
       else
-        puts "orly is not enabled for this directory, so there is nothing to uninstall.".yellow
+        puts "O RLY is not enabled for this directory, so there is nothing to uninstall.".yellow
       end
     end
 
