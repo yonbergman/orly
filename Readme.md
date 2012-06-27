@@ -1,10 +1,10 @@
 # O RLY
 A tool that lets you know when you need to run `bundle install` or `rake db:migrate`
-    ,___,
-    {o,O}
-    |)``)
-    -"-"-
-    O RLY?
+        ,___,
+        {o,O}
+        |)``)
+        -"-"-
+        O RLY?
 
 ## Installation
 
