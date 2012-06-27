@@ -1,5 +1,6 @@
 require 'orly/installation'
 require 'orly/tester'
+require 'orly/version'
 require "choice"
 require "colored"
 
