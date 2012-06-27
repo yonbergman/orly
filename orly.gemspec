@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["yon"]
   s.email       = ["yonatanbergman@gmail.com"]
   s.homepage    = "http://github.com/yonbergman/orly"
-  s.summary     = %q{A tool that lets you know when you need to run `bundle install` or `rake db:migrate`}
-  s.description = %q{A tool that lets you know when you need to run `bundle install` or `rake db:migrate`}
+  s.summary     = %q{Tells you when you need to run `bundle install` or `rake db:migrate`}
+  s.description = %q{Install a post-merge hook for git that tells you when the Gemfile changed or a migration was added}
 
   s.rubyforge_project = "orly"
 
@@ -19,10 +19,9 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   # specify any dependencies here; for example:
+  #s.add_development_dependency "rake"
+  #s.add_development_dependency "rspec"
   s.add_runtime_dependency "git"
   s.add_runtime_dependency "choice"
   s.add_runtime_dependency "colored"
-  #s.add_development_dependency "rspec"
-  #s.add_development_dependency "activerecord"
-  #s.add_development_dependency "sqlite3"
 end
