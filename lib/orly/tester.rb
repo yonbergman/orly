@@ -24,7 +24,7 @@ module Orly
     end
 
     def need_bundle_install?
-      @diff.stats[:files].include? 'Gemfile.lock'
+      @diff.select {|file| file.path =~ /^Gemfile/}.length > 0
     rescue Git::GitExecuteError
       false
     end
