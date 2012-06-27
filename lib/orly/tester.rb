@@ -6,27 +6,36 @@ module Orly
   class Tester
 
     def initialize
-      @diff = get_diff
+      @need_bundle = false
+      @need_migrate = false
+      run_tests
     rescue ArgumentError
       raise NoRepo.new
     end
 
+    def run_tests
+      get_diff.each do |file|
+        if file.path =~ /^Gemfile/
+          @need_bundle = true
+        elsif file.path =~ /^db\/migrate/
+          @need_migrate = true
+        end
+      end
+    rescue Git::GitExecuteError
+      false
+    end
+
     def get_diff
-      #git diff --name-only HEAD@{1} HEAD
       git = Git.open('.')
       git.diff('HEAD@{1}','HEAD')
     end
 
     def need_migrate?
-      @diff.path('db/migrate').to_a.length > 0
-    rescue Git::GitExecuteError
-      false
+      @need_migrate
     end
 
     def need_bundle_install?
-      @diff.select {|file| file.path =~ /^Gemfile/}.length > 0
-    rescue Git::GitExecuteError
-      false
+      @need_bundle
     end
   end
 end
