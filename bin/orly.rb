@@ -1,10 +1,10 @@
 #!/usr/bin/env ruby
 
 begin
-  require 'lib/orly'
+  require 'orly'
 rescue LoadError
   require 'rubygems'
-  require 'lib/orly'
+  require 'orly'
 end
 
 include Orly

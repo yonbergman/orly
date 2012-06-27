@@ -1,5 +1,5 @@
-require 'lib/orly/installation'
-require 'lib/orly/tester'
+require 'orly/installation'
+require 'orly/tester'
 require "choice"
 require "colored"
 
