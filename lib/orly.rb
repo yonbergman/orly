@@ -10,8 +10,8 @@ module Orly
   def self.run
     tester  = Orly::Tester.new()
     notify = []
-    notify << "run 'rake db:migrate'".red if tester.need_migrate?
     notify << "run 'bundle install'".red if tester.need_bundle_install?
+    notify << "run 'rake db:migrate'".red if tester.need_migrate?
     Orly::OwlPrinter.print(notify) unless notify.empty?
   rescue Orly::NoRepo
     puts "O RLY: this is not a git repo".red
