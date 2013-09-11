@@ -1,3 +1,6 @@
+# v0.0.7
+ * Added support for Pod files
+ 
 # v0.0.6
  * Changed order to be bundle then migrate
 

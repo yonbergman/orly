@@ -15,10 +15,10 @@ module Orly
 
     def run_tests
       get_diff.each do |file|
-        if file.path =~ /^Gemfile/
-          @need_bundle = true
-        elsif file.path =~ /^db\/migrate/
-          @need_migrate = true
+        case(file)
+          when /^Gemfile/ then @need_bundle = true
+          when /^db\/migrate/ then @need_migrate = true
+          when /^Podfile/ then @need_pod = true
         end
       end
     rescue Git::GitExecuteError
@@ -36,6 +36,10 @@ module Orly
 
     def need_bundle_install?
       @need_bundle
+    end
+
+    def need_pod?
+      @need_pod
     end
   end
 end

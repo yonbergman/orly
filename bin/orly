@@ -11,7 +11,7 @@ include Orly
 
 Choice.options do
 
-  header "Orly notifies you whenever you pull an update that requires 'bundle install' or 'rake db:migrate'"
+  header "Orly notifies you whenever you pull an update that requires 'bundle install', 'rake db:migrate' or 'pod install'"
 
   option :install do
     short '-i'
@@ -41,6 +41,15 @@ Choice.options do
     action do |value|
       value = "YA RLY" if value == true
       Orly::OwlPrinter.print(value.split("\n"))
+    end
+  end
+
+  option :version do
+    short '-v'
+    long "--version"
+    desc "check orly's version"
+    action do
+      Orly::OwlPrinter.print(["Version: #{Orly::VERSION.to_s.green}"])
     end
   end
 
