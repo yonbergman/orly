@@ -15,7 +15,7 @@ module Orly
 
     def run_tests
       get_diff.each do |file|
-        case(file)
+        case(file.path)
           when /^Gemfile/ then @need_bundle = true
           when /^db\/migrate/ then @need_migrate = true
           when /^Podfile/ then @need_pod = true
