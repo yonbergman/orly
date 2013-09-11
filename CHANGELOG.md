@@ -1,6 +1,9 @@
+# v0.0.8
+ * Fixed orly not working at all
+ 
 # v0.0.7
  * Added support for Pod files
- 
+
 # v0.0.6
  * Changed order to be bundle then migrate
 
