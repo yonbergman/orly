@@ -1,6 +1,9 @@
+# v0.0.9
+ * Added NPM support for all the Node.JS fans out there. (@giladgo)
+ 
 # v0.0.8
  * Fixed orly not working at all
- 
+
 # v0.0.7
  * Added support for Pod files
 
