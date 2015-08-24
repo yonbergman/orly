@@ -35,4 +35,4 @@ ORLY supports the following development commands and knows to alert you when you
 In the Github page https://github.com/yonbergman/orly/
 
 ---
-Copyright (c) 2012-2014 Yonatan Bergman, released under the MIT license
+Copyright (c) 2015 Yonatan Bergman, released under the MIT license
