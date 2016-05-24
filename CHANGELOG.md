@@ -1,3 +1,6 @@
+# v0.0.10
+ * Added Bower support (@lorcan)
+
 # v0.0.9
  * Added NPM support for all the Node.JS fans out there. (@giladgo)
  

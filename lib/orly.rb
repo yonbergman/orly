@@ -13,6 +13,7 @@ module Orly
     notify << "run 'bundle install'".red if tester.need_bundle_install?
     notify << "run 'rake db:migrate'".red if tester.need_migrate?
     notify << "run 'pod install'".blue if tester.need_pod?
+    notify << "run 'bower install'".green if tester.need_bower?
     notify << "run 'npm install'".green if tester.need_npm?
     Orly::OwlPrinter.print(notify) unless notify.empty?
   rescue Orly::NoRepo
