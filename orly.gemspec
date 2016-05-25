@@ -6,9 +6,10 @@ Gem::Specification.new do |s|
   s.name        = "orly"
   s.version     = Orly::VERSION
   s.authors     = ["yon"]
-  s.email       = ["yonatanbergman@gmail.com"]
+  s.email       = ["yonbergman@gmail.com"]
+  s.licenses    = ['MIT']
   s.homepage    = "http://github.com/yonbergman/orly"
-  s.summary     = %q{Tells you when you need to run `bundle install` or `rake db:migrate`}
+  s.summary     = %q{Tells you when you need to run `bundle install`, `rake db:migrate`, `pod install`, `npm`, `bower install` }
   s.description = %q{Install a post-merge hook for git that tells you when the Gemfile changed or a migration was added}
 
   s.rubyforge_project = "orly"
