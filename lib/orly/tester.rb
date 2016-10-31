@@ -10,6 +10,7 @@ module Orly
       @need_migrate = false
       @need_bower = false
       @need_npm = false
+      @need_dotenv = false
       run_tests
     rescue ArgumentError
       raise NoRepo.new
@@ -23,6 +24,7 @@ module Orly
           when /^Podfile/ then @need_pod = true
           when /^bower\.json/ then @need_bower = true
           when /^package\.json/ then @need_npm = true
+          when /^.dotenv-encrypted/ then @need_dotenv = true
         end
       end
     rescue Git::GitExecuteError
@@ -52,6 +54,10 @@ module Orly
 
     def need_npm?
       @need_npm
+    end
+
+    def need_dotenv?
+      @need_dotenv
     end
 
   end

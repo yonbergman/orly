@@ -22,6 +22,7 @@ ORLY supports the following development commands and knows to alert you when you
 #### Ruby / Rails
 * `bundle install` - for Gemfile.lock changes
 * `rake db:migrate` - for db/migration changes
+* `dotenv-sync merge` - for changes in .dotenv-encrypted file
 
 #### iOS
 * `pod install` - for Podfile.lock changes
