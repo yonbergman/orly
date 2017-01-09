@@ -23,7 +23,7 @@ module Orly
           when /^db\/migrate/ then @need_migrate = true
           when /^Podfile/ then @need_pod = true
           when /^bower\.json/ then @need_bower = true
-          when /^package\.json/ then @need_npm = true
+          when /package\.json/ then @need_npm = true
           when /^.dotenv-encrypted/ then @need_dotenv = true
         end
       end
