@@ -10,6 +10,7 @@ module Orly
       @need_migrate = false
       @need_bower = false
       @need_npm = false
+      @uses_yarn = false
       @need_dotenv = false
       run_tests
     rescue ArgumentError
@@ -24,6 +25,7 @@ module Orly
           when /^Podfile/ then @need_pod = true
           when /^bower\.json/ then @need_bower = true
           when /package\.json/ then @need_npm = true
+          when /^yarn\.lock/ then @uses_yarn = true
           when /^.dotenv-encrypted/ then @need_dotenv = true
         end
       end
@@ -53,6 +55,12 @@ module Orly
     end
 
     def need_npm?
+      return false if uses_yarn?
+      @need_npm
+    end    
+
+    def need_yarn?
+      return false unless uses_yarn?
       @need_npm
     end
 
@@ -60,5 +68,8 @@ module Orly
       @need_dotenv
     end
 
+    private def uses_yarn?
+      @uses_yarn
+    end
   end
 end
