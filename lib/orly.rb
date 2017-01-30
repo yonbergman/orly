@@ -16,6 +16,7 @@ module Orly
     notify << "run 'pod install'".blue if tester.need_pod?
     notify << "run 'bower install'".green if tester.need_bower?
     notify << "run 'npm install'".green if tester.need_npm?
+    notify << "run 'yarn install'".green if tester.need_yarn?
     Orly::OwlPrinter.print(notify) unless notify.empty?
   rescue Orly::NoRepo
     puts "O RLY: this is not a git repo".red

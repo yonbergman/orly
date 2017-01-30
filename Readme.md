@@ -29,6 +29,7 @@ ORLY supports the following development commands and knows to alert you when you
 
 #### NPM / Bower
 * `npm install` - for package.json changes
+* `yarn install` - for package.json and yarn.lock changes
 * `bower install` - for bower.json changes
 
 ## More info

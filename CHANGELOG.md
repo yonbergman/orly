@@ -1,3 +1,11 @@
+# v0.0.13
+ * Added Yarn support (@sduquej)
+
+# v0.0.12
+
+# v0.0.11
+ * Added .dotenv-encrypted support
+
 # v0.0.10
  * Added Bower support (@lorcan)
 
