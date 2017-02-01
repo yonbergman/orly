@@ -57,7 +57,7 @@ module Orly
     def need_npm?
       return false if uses_yarn?
       @need_npm
-    end    
+    end
 
     def need_yarn?
       return false unless uses_yarn?
@@ -68,7 +68,7 @@ module Orly
       @need_dotenv
     end
 
-    private def uses_yarn?
+    def uses_yarn?
       @uses_yarn
     end
   end
