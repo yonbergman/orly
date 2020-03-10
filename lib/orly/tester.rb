@@ -12,6 +12,9 @@ module Orly
       @need_npm = false
       @uses_yarn = false
       @need_dotenv = false
+      @need_mix = false
+      @need_ecto_migrate = false
+      @need_ecto_seed = false
       run_tests
     rescue ArgumentError
       raise NoRepo.new
@@ -27,6 +30,9 @@ module Orly
           when /package\.json/ then @need_npm = true
           when /^yarn\.lock/ then @uses_yarn = true
           when /^.dotenv-encrypted/ then @need_dotenv = true
+          when /^mix\.lock/ then @need_mix = true
+          when /priv\/[-_.A-Za-z0-9]*\/migrations/ then @need_ecto_migrate = true
+          when /priv\/[-_.A-Za-z0-9]*\/(?:seeds\.exs|fixtures\/[-_.A-Za-z0-9]*\.exs)/ then @need_ecto_seed = true
         end
       end
     rescue Git::GitExecuteError
@@ -70,6 +76,18 @@ module Orly
 
     def uses_yarn?
       @uses_yarn
+    end
+
+    def need_mix?
+      @need_mix
+    end
+
+    def need_ecto_migrate?
+      @need_ecto_migrate
+    end
+
+    def need_ecto_seed?
+      @need_ecto_seed
     end
   end
 end
