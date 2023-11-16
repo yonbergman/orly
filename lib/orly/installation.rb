@@ -16,7 +16,7 @@ END
 
         Dir.mkdir(HOOK_DIR) unless File.directory?(HOOK_DIR)
 
-        if File.exists? HOOK_PATH
+        if File.exist? HOOK_PATH
           puts "A post-merge hook already exists for this project.".red
           exit 1
         end
@@ -29,7 +29,7 @@ END
     end
 
     def self.uninstall
-      if File.exists? HOOK_PATH
+      if File.exist? HOOK_PATH
         FileUtils.rm HOOK_PATH
         puts "uninstalled #{HOOK_PATH}".green
       else
